@@ -1,7 +1,7 @@
 {
-  "name": "algolia-open-search-suggestions",
+  "name": "algolia-opensearch-suggestions",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "author": "François Chalifour",
   "license": "MIT",
   "scripts": {
