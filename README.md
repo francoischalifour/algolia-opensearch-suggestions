@@ -1,6 +1,6 @@
 # algolia-opensearch-suggestions
 
-Endpoint to convert [Algolia Query Suggestions](https://www.algolia.com/doc/guides/getting-insights-and-analytics/leveraging-analytics-data/query-suggestions/) search results to [OpenSearch Suggestions convention](https://github.com/dewitt/opensearch/blob/c9ed38a524c53b61d582634b28e5e83af9f8f8ae/mediawiki/Specifications/OpenSearch/Extensions/Suggestions/1.1/Draft%201.wiki)
+Endpoint to convert [Algolia Query Suggestions](https://www.algolia.com/doc/guides/getting-insights-and-analytics/leveraging-analytics-data/query-suggestions/) search results to the [OpenSearch Suggestions convention](https://github.com/dewitt/opensearch/blob/c9ed38a524c53b61d582634b28e5e83af9f8f8ae/mediawiki/Specifications/OpenSearch/Extensions/Suggestions/1.1/Draft%201.wiki).
 
 ## Usage
 
