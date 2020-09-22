@@ -1,0 +1,16 @@
+# Generated files
+node_modules/
+.DS_Store
+.eslintcache
+*.log
+coverage/
+.cache
+
+# Built files
+lambda/
+
+# IDE
+.vscode/
+
+# Environment files
+.env
