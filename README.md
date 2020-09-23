@@ -1,6 +1,6 @@
 # algolia-opensearch-suggestions
 
-Service to convert [Algolia Query Suggestions](https://www.algolia.com/doc/guides/getting-insights-and-analytics/leveraging-analytics-data/query-suggestions/) search results to [OpenSearch Suggestions](https://github.com/dewitt/opensearch/blob/c9ed38a524c53b61d582634b28e5e83af9f8f8ae/mediawiki/Specifications/OpenSearch/Extensions/Suggestions/1.1/Draft%201.wiki).
+Service to convert [Algolia Query Suggestions](https://www.algolia.com/doc/guides/getting-insights-and-analytics/leveraging-analytics-data/query-suggestions/) to [OpenSearch Suggestions](https://github.com/dewitt/opensearch/blob/c9ed38a524c53b61d582634b28e5e83af9f8f8ae/mediawiki/Specifications/OpenSearch/Extensions/Suggestions/1.1/Draft%201.wiki).
 
 <div align="center">
 
@@ -39,7 +39,7 @@ https://algolia-opensearch-suggestions.netlify.app/.netlify/functions/suggestion
   <!-- Replace the query parameters with your Algolia credentials -->
   <Url
     type="application/x-suggestions+json"
-    template="https://algolia-opensearch-suggestions.netlify.app/.netlify/functions/suggestions?query={searchTerms}&amp;&appId=latency&amp;apiKey=6be0576ff61c053d5f9a3225e2a90f76&amp;indexName=instant_search_demo_query_suggestions&amp;hitsPerPage=10"
+    template="https://algolia-opensearch-suggestions.netlify.app/.netlify/functions/suggestions?query={searchTerms}&amp;appId=latency&amp;apiKey=6be0576ff61c053d5f9a3225e2a90f76&amp;indexName=instant_search_demo_query_suggestions&amp;hitsPerPage=10"
   />
 </OpenSearchDescription>
 ```
