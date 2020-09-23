@@ -1,14 +1,7 @@
-import algolisearch from "algoliasearch/lite";
-import { Handler } from "aws-lambda";
+import algoliasearch from 'algoliasearch/lite';
+import { Handler } from 'aws-lambda';
 
-type NetlifyEvent = {
-  path: string;
-  httpMethod: string;
-  headers: Headers;
-  queryStringParameters: Record<string, string>;
-  body: string;
-  isBase64Encoded: boolean;
-};
+import { NetlifyEvent } from './types';
 
 type QuerySuggestionsRecord = {
   query: string;
@@ -17,7 +10,14 @@ type QuerySuggestionsRecord = {
   nb_words: number;
 };
 
-export const handler: Handler<NetlifyEvent> = async (event) => {
+type SuggestionsResponse = {
+  statusCode: number;
+  body: string;
+};
+
+export const handler: Handler<NetlifyEvent, SuggestionsResponse> = async (
+  event
+) => {
   const {
     appId,
     apiKey,
@@ -25,7 +25,7 @@ export const handler: Handler<NetlifyEvent> = async (event) => {
     query,
     ...params
   } = event.queryStringParameters;
-  const searchClient = algolisearch(appId, apiKey);
+  const searchClient = algoliasearch(appId, apiKey);
 
   try {
     const response = await searchClient.search<QuerySuggestionsRecord>([
@@ -35,6 +35,14 @@ export const handler: Handler<NetlifyEvent> = async (event) => {
         params,
       },
     ]);
+
+    if (response.results.length === 0) {
+      return {
+        statusCode: 200,
+        body: JSON.stringify([]),
+      };
+    }
+
     const [result] = response.results;
     const suggestions = [result.query, result.hits.map((hit) => hit.query)];
 
