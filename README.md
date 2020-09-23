@@ -4,7 +4,9 @@ Service to convert [Algolia Query Suggestions](https://www.algolia.com/doc/guide
 
 <div align="center">
 
-![Preview](https://user-images.githubusercontent.com/6137112/94016490-78bcd700-fdae-11ea-8057-fd596ed68eb3.png)
+![Preview](.github/preview.png)
+
+Picture of Firefox showing Algolia Query Suggestions from the URL bar with OpenSearch Suggestions.
 
 </div>
 
