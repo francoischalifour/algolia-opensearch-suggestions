@@ -25,6 +25,7 @@ describe('suggestions', () => {
       }))
     );
   });
+
   test('forwards Algolia credentials to the client', async () => {
     await handler(
       createHandlerEvent<NetlifyEvent>({
@@ -103,7 +104,11 @@ describe('suggestions', () => {
 
   test('returns the API error when the client throws', async () => {
     algoliasearchMock.mockImplementationOnce(() => ({
-      search: jest.fn(() => Promise.reject(createApiError('Error', 400, []))),
+      search: jest.fn(() =>
+        Promise.reject<MultipleQueriesResponse<any>>(
+          createApiError('Error', 400, [])
+        )
+      ),
     }));
 
     const suggestions = await handler(
@@ -132,7 +137,9 @@ describe('suggestions', () => {
 
   test('returns a server error when service fails for unknown reason', async () => {
     algoliasearchMock.mockImplementationOnce(() => ({
-      search: jest.fn(() => Promise.reject(new Error())),
+      search: jest.fn(() =>
+        Promise.reject<MultipleQueriesResponse<any>>(new Error())
+      ),
     }));
 
     const suggestions = await handler(

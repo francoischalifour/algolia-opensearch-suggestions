@@ -2,11 +2,14 @@
   "name": "algolia-opensearch-suggestions",
   "version": "1.0.0",
   "private": true,
-  "author": "François Chalifour",
   "license": "MIT",
+  "author": "François Chalifour",
+  "homepage": "https://github.com/francoischalifour/algolia-opensearch-suggestions",
+  "repository": "francoischalifour/algolia-opensearch-suggestions",
   "scripts": {
     "build": "netlify-lambda build src",
     "dev": "netlify-lambda serve src",
+    "test:types": "tsc --noEmit",
     "test": "jest"
   },
   "devDependencies": {
