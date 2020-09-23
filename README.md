@@ -2,6 +2,12 @@
 
 Service to convert [Algolia Query Suggestions](https://www.algolia.com/doc/guides/getting-insights-and-analytics/leveraging-analytics-data/query-suggestions/) search results to [OpenSearch Suggestions](https://github.com/dewitt/opensearch/blob/c9ed38a524c53b61d582634b28e5e83af9f8f8ae/mediawiki/Specifications/OpenSearch/Extensions/Suggestions/1.1/Draft%201.wiki).
 
+<div align="center">
+
+![Preview](https://user-images.githubusercontent.com/6137112/94016490-78bcd700-fdae-11ea-8057-fd596ed68eb3.png)
+
+</div>
+
 ## Usage
 
 ### Endpoint
