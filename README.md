@@ -12,12 +12,6 @@ Picture of Firefox showing Algolia Query Suggestions from the URL bar with OpenS
 
 ## Usage
 
-### Endpoint
-
-```
-https://algolia-opensearch-suggestions.netlify.app/.netlify/functions/suggestions
-```
-
 ### Query parameters
 
 - [`appId`](https://www.algolia.com/api-keys/)
@@ -28,7 +22,15 @@ https://algolia-opensearch-suggestions.netlify.app/.netlify/functions/suggestion
 
 ###### Example
 
-https://algolia-opensearch-suggestions.netlify.app/.netlify/functions/suggestions?query=iphone&appId=latency&apiKey=6be0576ff61c053d5f9a3225e2a90f76&indexName=instant_search_demo_query_suggestions&hitsPerPage=3
+```
+https://your-website.com/.netlify/functions/suggestions?query=iphone&appId=appId&apiKey=apiKey&indexName=indexName&hitsPerPage=3
+```
+
+### Returns
+
+```json
+["iphone",["iphone","iphone 6s","iphone gray"]]
+```
 
 ### Add OpenSearch to your website
 
@@ -41,7 +43,7 @@ https://algolia-opensearch-suggestions.netlify.app/.netlify/functions/suggestion
   <!-- Replace the query parameters with your Algolia credentials -->
   <Url
     type="application/x-suggestions+json"
-    template="https://algolia-opensearch-suggestions.netlify.app/.netlify/functions/suggestions?query={searchTerms}&amp;appId=latency&amp;apiKey=6be0576ff61c053d5f9a3225e2a90f76&amp;indexName=instant_search_demo_query_suggestions&amp;hitsPerPage=10"
+    template="https://your-website.com/.netlify/functions/suggestions?query={searchTerms}&amp;appId=latency&amp;apiKey=6be0576ff61c053d5f9a3225e2a90f76&amp;indexName=instant_search_demo_query_suggestions&amp;hitsPerPage=10"
   />
 </OpenSearchDescription>
 ```
@@ -74,10 +76,6 @@ https://algolia-opensearch-suggestions.netlify.app/.netlify/functions/suggestion
 ###### `index.html`
 
 </div>
-
-## Note
-
-This app is hosted on a Netlify plan that offers 125K function endpoint requests per month or 100 hours of function run time per month. I recommend forking this project and hosting it on your own lambda/server to not overuse this service.
 
 ## Resources
 
